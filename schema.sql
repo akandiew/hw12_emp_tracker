@@ -1,1 +1,28 @@
-sdofnvkjdsfnv
+DROP DATABASE IF EXISTS firm;
+
+CREATE DATABASE firm;
+
+USE firm;
+
+CREATE TABLE employees (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(30) NULL,
+  last_name VARCHAR(30) NULL,
+  role_id INT UNSIGNED NOT NULL,
+  manager_id INT UNSIGNED NOT NULL
+);
+
+CREATE TABLE roles (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(30) NULL,
+  salary DECIMAL(10,0) NULL,
+  department_id INT UNSIGNED NOT NULL
+);
+
+CREATE TABLE department (
+  id INT NOT NULL AUTO_INCREMENT,
+  dept_name VARCHAR(30) NULL,
+  PRIMARY KEY (id)
+);
+
+SELECT * FROM employees
